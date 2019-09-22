@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Jugando</title>
+</head>
+<body >
+    <div id="inicio">
+      <h1 align="center">APRENDIENDO JUGANDO</h1>
+      <h4 align="center">NIVEL PRIMARIA</h4>
+      <center>
+        <input type="text" id="name" placeholder="NOMBRE" style="text-align: center"><br><br>
+        <select name="list" id="lista">
+            <option value=""disable selected>--SELECCIONAR GRADO--</option>
+            <option value="Primer Grado">1ER GRADO</option>
+            <option value="Segundo Grado">2DO GRADO</option>
+            <option value="Tercer Grado">3ER GRADO</option>
+            <option value="Cuarto Grado">4TO GRADO</option>
+            <option value="Quinto Grado">5TO GRADO</option>
+            <option value="Sexto Grado">6TO GRADO</option>
+        </select> 
+        <br><br>       
+        <button type="submit" id="button" onclick="getData()">Enter</button>
+      </center>
+     </div>
+    <div id="opciones1">
+        <center>
+            <h1><div id="cont1"></div></h1><br>
+            <h4><div id="cont4"></div></h4><br>
+            <br>
+            <h4>¿Qué deseas hacer?</h4>
+            <button id="rm" onclick="getRm()">Razonamiendo Matemático</button>
+            <button id="rv" onclick="getRv()">Razomiento Verbal</button>
+        </center>
+    </div>
+    <div id="razon_math1">
+        <center>
+                <h1><div id="cont2"></div></h1>
+                <button id=volver onclick="atras()">atrás</button><br>
+                <br>
+        </center>
+                <h4>1) Sumar: 2 + 4 =</h4>
+                <input type="radio" id=re1 name="type" onclick="getResp1()" value="6" checked>a) 6<br>
+                <input type="radio" id=re2 name="type" onclick="getResp1()" value="8" checked>b) 8<br>
+                <input type="radio" id=re3 name="type" onclick="getResp1()" value="9" checked>c) 9<br>
+                <input type="radio" id=re4 name="type" onclick="getResp1()" value="10" checked>d) 10<br>|
+                <h4>2) Sumar: 4 + 12 =</h4>
+                <input type="radio" id=re5 name="type1" checked>a) 15<br>
+                <input type="radio" id=re6 name="type1">b) 16<br>
+                <input type="radio" id=re7 name="type1">c) 17<br>
+                <input type="radio" id=re8 name="type1">d) 10<br>
+                <h4>3) Sumar: 6 + 4 =</h4>
+                <input type="radio" id=re9 name="type2">a) 20<br>
+                <input type="radio" id=re10 name="type2">b) 8<br>
+                <input type="radio" id=re11 name="type2">c) 9<br>
+                <input type="radio" id=re12 name="type2">d) 10<br>
+                <h4>4) Resta: 8 - 4 =</h4>
+                <input type="radio" id=re13 name="type3">a) 1<br>
+                <input type="radio" id=re14 name="type3">b) 0<br>
+                <input type="radio" id=re15 name="type3">c) 4<br>
+                <input type="radio" id=re16 name="type3">d) 2<br>
+                <h4>5) Resta: 10 - 5 =</h4>
+                <input type="radio" id=re17 name="type4">a) 1<br>
+                <input type="radio" id=re18 name="type4">b) 5<br>
+                <input type="radio" id=re19 name="type4">c) 6<br>
+                <input type="radio" id=re20 name="type4">d) 0<br><br>
+                <center>
+                <button id="enviar" onclick="resp_math()">ENVIAR RESPUESTAS</button>
+                </center>
+    </div>
+    <div id="razon_vrb1">
+            <center>
+              <h1><div id="cont3"></div></h1>
+              <button id=volver onclick="atras()">atrás</button><br>
+              <h3>¿Qué sigué?</h3>
+              <br>
+            </center>
+              <h4>1) ===> a , e , ___ , o , u</h4>
+              <input type="radio" id=re21 name="type5">a) me<br>
+              <input type="radio" id=re22 name="type5">b) i<br>
+              <input type="radio" id=re23 name="type5">c) o<br>
+              <input type="radio" id=re24 name="type5">d) lu<br>
+              <h4>2) ===> ma , ___ , mi , mo , mu</h4>
+              <input type="radio" id=re25 name="type6">a) la<br>
+              <input type="radio" id=re26 name="type6">b) ke<br>
+              <input type="radio" id=re27 name="type6">c) li<br>
+              <input type="radio" id=re28 name="type6">d) me<br>              
+              <h4>3) ===> ka , ke , ki , ___ , ku</h4>
+              <input type="radio" id=re29 name="type7">a) ko<br>
+              <input type="radio" id=re30 name="type7">b) la<br>
+              <input type="radio" id=re31 name="type7">c) be<br>
+              <input type="radio" id=re32 name="type7">d) a<br>
+              <h4>4) ===> ___ , pe , pi , po , pu</h4>
+              <input type="radio" id=re33 name="type8">a) ja<br>
+              <input type="radio" id=re34 name="type8">b) la<br>
+              <input type="radio" id=re35 name="type8">c) pa<br>
+              <input type="radio" id=re36 name="type8">d) ra<br>
+              <h4>5) ===> la , le , ___ , lo , lu</h4>
+              <input type="radio" id=re37 name="type9">a) ma<br>
+              <input type="radio" id=re38 name="type9">b) pa<br>
+              <input type="radio" id=re39 name="type9">c) li<br>
+              <input type="radio" id=re40 name="type9">d) po<br>                
+            <center>
+              <button id="enviar1" onclick="resp_vrb()">ENVIAR RESPUESTAS</button>
+            </center>
+        </div>
+        <div id="respuestas_math">
+            <center>
+                <h1>RESPUESTAS DE RAZONAMIENTO MATEMÁTICO</h1>
+            </center>
+                <h4><div id="cont4"></div></h4>
+            <center>
+                <button id="enviar2" onclick="getRv()">IR A RAZONAMIENTO VERBAL</button>
+                <button id="enviar4" onclick="inicio_1()">COMENZAR DE NUEVO</button>
+            </center>
+        </div>
+        <div id="respuestas_vrb">
+                <center>
+                    <h1>RESPUESTAS DE RAZONAMIENTO VERBAL</h1>
+                </center>
+                <center>
+                    <button id="enviar3" onclick="getRm()">IR A RAZONAMIENTO MATEMÁTICO</button>
+                    <button id="enviar4" onclick="inicio_1()">COMENZAR DE NUEVO</button>
+                </center>
+            </div>
+    <script src="app.js"></script>
+</body>
+</html>
